@@ -1,0 +1,40 @@
+fieldset.fieldset-style{
+    background-color: rgb(94, 149, 217);
+  }
+  .form-bottom-message{
+    color:white;
+    float: right;
+}
+fieldset.fieldset-style{
+  background-color: rgb(94, 149, 217);
+}
+input[type=submit]{
+  background-color: rgb(11, 65, 130);;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 45px;
+  max-width: fit-content;
+  max-height: fit-content;
+  margin: 0 auto;
+  border: 2px solid #fff;
+  font-size: 12px;
+}
+h1, legend{
+    color: rgb(255, 255, 255);
+}
+input[type=submit]:hover{
+    background: #fff;
+      color: rgb(94, 149, 217);
+  }
+  input[type=submit]:focus{
+    background: #fff;
+      color: rgb(51, 102, 164);
+  }
+.message{
+    color:rgb(131, 0, 0);
+    font-weight: bolder;
+}

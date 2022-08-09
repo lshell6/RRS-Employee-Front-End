@@ -1,0 +1,49 @@
+<h1>Sign Up</h1>
+<br /><br />
+<div class="user-modal">
+      <div id="signup">
+      <form class = "form" (submit)="onFormSubmit()"[formGroup]="signUpForm">
+            <div class="error-msg">
+                  <span *ngIf="message!=''">
+                      {{message}}
+                      <br/><br/>
+                  </span>
+              </div>
+            <fieldset class="fieldset-style">
+                  <label>Enter Name: </label>
+            <input type="text" name="name"
+                  formControlName="name">
+            </fieldset>
+            <fieldset class="fieldset-style">
+                  <label>Enter UserName: </label>
+            <input type="text" name="username"
+                  formControlName="username">
+            </fieldset>
+            <fieldset class="fieldset-style">
+                  <label>Enter Password: </label>
+                  <input type="password" name="password"
+                  formControlName="password">
+            </fieldset>
+            <fieldset class="fieldset-style">
+                  <label>Enter Password Again: </label>
+                  <input type="password" name="verifyPassword"
+                  formControlName="verifyPassword">
+            </fieldset>
+            <fieldset class="fieldset-style">
+                  <label>Enter Security Question: </label>
+                  <input type="text" name="question"
+                  formControlName="securityQuestion">
+            </fieldset>
+            <fieldset class="fieldset-style">
+                  <label>Enter Security Answer: </label>
+                  <input type="tect" name="answer"
+                  formControlName="securityAnswer">
+            </fieldset>
+            <br/><br/>
+            <p class="fieldset">
+                  <button type="submit"[disabled]="!signUpForm.valid">Sign Up</button>
+            </p>
+            <br/><br/>
+      </form>
+      </div>
+</div>

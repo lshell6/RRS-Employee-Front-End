@@ -1,0 +1,29 @@
+<h1>Login</h1>
+<br /><br />
+<div class="user-modal">
+      <div id="login">
+            <form class = "form" (submit)="onFormSubmit()" [formGroup]="loginForm">
+                  <div class="error-msg">
+                        <span *ngIf="message!=''">
+                            {{message}}
+                            <br/><br/>
+                        </span>
+                    </div>
+                  <fieldset class = "fieldset-style">
+                        <label>Enter Username: </label>
+                        <input type="text" name="username"
+                          formControlName="username">
+                  </fieldset>
+                   <fieldset class="fieldset-style">
+                        <label>Enter Password </label>
+                        <input type="password" name="password"
+                          formControlName="password">
+                   </fieldset>
+                   <br/><br/>
+                        <input type="submit" value = "Login" [disabled]="!loginForm.valid">
+                  <br/><br/>
+             </form>
+      </div>
+</div>
+<br /><br />
+ <p class="form-bottom-message"><a routerLink="/verify-username" (click)="toVerifyUsername()">Forgot Your Password? Click Here to Reset!</a></p>

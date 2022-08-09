@@ -1,0 +1,177 @@
+.error-msg{
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+}
+form.form{
+  border: rgb(4, 58, 123);
+  border-style: groove;
+  border-radius: 20px;
+  border-width: 10px;
+  max-width: 50%;
+  width: 800px;
+  margin: 0 auto;
+}
+.form-bottom-message{
+    color:white;
+    float: right;
+}
+fieldset.fieldset-style{
+  background-color: rgb(94, 149, 217);
+}
+form.submit{
+  background: rgb(94, 149, 217);
+	border: 2px solid #fff;
+	border-radius: 45px;
+  max-width: fit-content;
+  max-height: fit-content;
+  font-size: 18px;
+  text-align: center;
+}
+input[type=submit]{
+  background-color: rgb(94, 149, 217);;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 45px;
+  max-width: fit-content;
+  max-height: fit-content;
+  margin: 0 auto;
+  border: 2px solid #fff;
+}
+.submit:hover {
+  background-color: #122b84;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    background: #ededed;
+  }
+  
+  input{
+    border: none;
+    outline: none;
+    background: none;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  }
+  
+
+  @mixin signUpActive {
+    .cont.s--signup & {
+      @content;
+    }
+  }
+  
+  .tip {
+    font-size: 20px;
+    margin: 40px auto 50px;
+    text-align: center;
+  }
+  
+  .cont {
+    overflow: hidden;
+    position: relative;
+    height: 550px;
+    margin: 0 auto 100px;
+    background: #fff;
+  }
+  
+  .form {
+    position: relative;
+    height: 100%;
+    padding: 50px 30px 0;
+  }
+  
+  .sub-cont {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: #fff;
+  
+    @include signUpActive {
+      transform: translate3d($formW * -1,0,0);
+    }
+  }
+  
+  button {
+    display: block;
+    margin: 0 auto;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  .img {
+    overflow: hidden;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    padding-top: 360px;
+  }
+  
+  h1 {
+    width: 100%;
+    font-size: 26px;
+    text-align: center;
+    color:white;
+  }
+  
+  label {
+    display: block;
+    margin: 25px auto 0;
+    text-align: center;
+    color:white;
+  }
+  
+  input {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+    text-align: center;
+  }
+  
+  .forgot-pass {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    color: #cfcfcf;
+  }
+  
+  .submit {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 50px;
+  }
+  
+  .fb-btn {
+    border: 2px solid #d3dae9;
+    color: darken(#d3dae9, 20%);
+  
+  }
+  
+  .sign-in {
+    transition-timing-function: ease-out;
+  }
+  
+  .icon-link {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    width: 32px;
+  }

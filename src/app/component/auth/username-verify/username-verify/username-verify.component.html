@@ -1,0 +1,27 @@
+<div class="user-modal">
+    <h1>
+        Verify Your Username
+    </h1>
+    <fieldset class="fieldset-style">
+        <div class="message">
+            <span *ngIf="msg !=''">{{msg}}</span>
+        </div>
+    <legend>Step 1: Enter Username </legend>
+    <input type="text" [(ngModel)]="username">
+    <br /><br />
+    <input type="submit" (click)="onSubmit()" [disabled]="!status" value="Verify Username">
+    </fieldset>
+    <br /><br />
+    <div>
+        <fieldset class = "fieldset-style">
+            <legend>Step 2: Answer Security Question</legend>
+            <label class="question">
+                {{dto?.securityQuestion}}
+            </label>
+            <br /><br />
+            <input [(ngModel)]="answer" type = "text">
+            <br /><br />
+            <input type="submit" (click)="onQuestionSubmit()" [disabled]="!status" value="Submit Answer">
+        </fieldset>
+    </div>
+</div>
