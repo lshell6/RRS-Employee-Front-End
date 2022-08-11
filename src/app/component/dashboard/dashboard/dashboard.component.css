@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+    font-family: Hack, monospace;
+  }
+  
+  div {
+    color: transparent;
+    text-align: center;
+  }
+  
+  p {
+    margin: 16px;
+    font-size: 50px;
+    color:rgb(219, 216, 216);
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 1s ease-in-out;
+    position: relative;
+    text-align: center;
+  }
+  p::before, p:hover{
+    content: attr(data-item);
+    transition: all 1s ease-in-out;
+    color: rgb(0, 149, 255);
+    overflow: hidden;
+  }
+  p:hover{
+    width: 100%;
+  }
+  
+  nav {
+    margin: 25px;
+    background: transparent;
+    padding: 16px;
+    align-items: center;
+    height: 100%;
+  }
+  a{
+    text-decoration: none;
+        color: rgb(219, 216, 216);
+        font-size: 24px;
+        font-weight: 400;
+        transition: all 0.5s ease-in-out;
+        position: relative;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+  }
+
+  a::before, a:hover{
+    content: attr(data-item);
+    transition: all 1.5s ease-in-out;
+    background-color: rgb(0, 149, 255);
+    overflow: hidden;
+  }
+
+  .active{
+    color: rgb(0, 149, 255);
+    text-shadow: white;
+    -webkit-text-stroke: 1px white;
+  }
+
+  footer {
+    position: absolute;
+    font-size: 12px;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+    background-color: transparent;
+    color: transparent;
+    text-align: center;
+  }
+  
+  
+[class*=underlay] {
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    top: 0;
+  }
+  .underlay-photo {
+    animation: hue-rotate 6s infinite;
+    background: url('https://img.freepik.com/free-photo/abstract-blur-defocused-shopping-mall_1203-9543.jpg?w=1060&t=st=1660233213~exp=1660233813~hmac=a2f03bea1b0d02acb801b8ac9bad76dac17120d37da196ca4dda1d63e6b48fee');
+    background-size: cover;
+    -webkit-filter: grayscale(30%);
+    z-index: -1;
+  }
+  .underlay-black {
+    background: rgba(0,0,0,0.7);
+    z-index: -1;
+  }

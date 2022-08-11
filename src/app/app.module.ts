@@ -9,6 +9,9 @@ import { SignUpComponent } from './component/auth/sign-up/sign-up.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ResetPasswordComponent } from './component/auth/reset-password/reset-password/reset-password.component';
 import { UsernameVerifyComponent } from './component/auth/username-verify/username-verify/username-verify.component';
+import { DashboardComponent } from './component/dashboard/dashboard/dashboard.component';
+import { LogoutComponent } from './component/auth/logout/logout/logout.component';
+import { ProfileComponent } from './component/profile/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { UsernameVerifyComponent } from './component/auth/username-verify/userna
     LoginComponent,
     ResetPasswordComponent,
     UsernameVerifyComponent,
+    DashboardComponent,
+    LogoutComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

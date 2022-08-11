@@ -1,0 +1,40 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-8 col-lg-6">
+            <!-- Section Heading-->
+            <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <nav class = "nav">
+                      <a routerLink="/dashboard">Home</a> 
+                      &nbsp;&nbsp;&nbsp;
+                      <a routerLink="/profile" class="active">Profile</a>
+                      &nbsp;&nbsp;&nbsp;
+                      <a routerLink="/redeem">Redeem Points</a>
+                      &nbsp;&nbsp;&nbsp;
+                      <a routerLink="/edit">Edit Profile</a>
+                      &nbsp;&nbsp;&nbsp;
+                      <a routerLink="/logout" (click)="logout()">Logout</a>
+                  </nav>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Single Advisor-->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+              <!-- Team Thumb-->
+              <div class="advisor_thumb"><img src="https://www.kindpng.com/picc/m/406-4063140_technology-graphics-transparent-background-hd-png-download.png" alt="example compnay logo">
+              </div>
+              <!-- Team Details-->
+              <div class="single_advisor_details_info">
+                <h3>Samantha Sarah</h3>
+                <p>You currently have: x points</p>
+                <p>You have earned x number of points since creating an account</p>
+                <!-- <p class="designation">You currently have: {{employee.current_points}}</p>
+                <p class="designation">You have earned {{employee.total_points}} since creating an account</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
