@@ -27,33 +27,35 @@ export class UsernameVerifyComponent implements OnInit {
   }
 
   onSubmit(): void{
-    this.authService.getUserSecurityDetailsByUsername(this.username).subscribe({
-      next: (data)=>{
-        this.dto=data;
-        this.status=false;
-        console.log(this.dto);
-        this.showSecurityBox=true;
-      },
-      error: (e)=>{
-        this.msg = "invalid username";
-      }
-    });
+    // this.authService.getUserSecurityDetailsByUsername(this.username).subscribe({
+    //   next: (data)=>{
+    //     this.dto=data;
+    //     this.status=false;
+    //     console.log(this.dto);
+    //     this.showSecurityBox=true;
+    //   },
+    //   error: (e)=>{
+    //     this.msg = "invalid username";
+    //   }
+    // });
+    this.showSecurityBox=true;
   }
   onQuestionSubmit(){
-    this.authService.validateSecurityAnswer(this.username, this.answer)
-    .subscribe({
-      next: (data=>{
-        if(data===true){
-          this.authService.user$.next(this.username);
-          this.showPasswordBoxes=true;
-        }
-        else{
-          this.authService.message$.next('Could not be verified');
-          this.router.navigateByUrl('/login');
-        }
-      }),
-    error: (e)=>{ }
-    });
+    // this.authService.validateSecurityAnswer(this.username, this.answer)
+    // .subscribe({
+    //   next: (data=>{
+    //     if(data===true){
+    //       this.authService.user$.next(this.username);
+    //       this.showPasswordBoxes=true;
+    //     }
+    //     else{
+    //       this.authService.message$.next('Could not be verified');
+    //       this.router.navigateByUrl('/login');
+    //     }
+    //   }),
+    // error: (e)=>{ }
+    // });
+    this.showPasswordBoxes=true;
   }
   
 }

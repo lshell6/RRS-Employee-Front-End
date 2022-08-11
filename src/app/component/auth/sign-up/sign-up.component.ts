@@ -71,4 +71,7 @@ export class SignUpComponent implements OnInit {
   toLogin(): void{
     this.router.navigateByUrl("");
   }
+  toSignUp(): void{
+    this.router.navigateByUrl("/sign-up");
+  }
 }

@@ -1,64 +1,32 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
-@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
-
 select{
-    height: auto;
-    padding: 15px;
-    cursor: pointer;
-    font-weight: 400;
-    color: rgb(224, 224, 224);
-    background-color: #222;
-    width:100%;
-    height:40px;
-    border: none;
-  }
-.error-msg{
-    font-weight: bolder;
-    font-size: small;
-    text-align: center;
-    color:red;
-} 
-a{
-    color:white;
-    font-size: small;
-    text-align: center;
+  height: auto;
+  padding: 15px;
+  cursor: pointer;
+  font-weight: 400;
+  color: white;
+  background-color: rgb(0, 149, 255);
+  width:100%;
+  height:40px;
+  border: none;
 }
-span{
-    color:rgba(255, 255, 255, 0.622);
-    margin: 0 auto;
-    text-align: center;
-  }
-
-.form-bottom-message{
-    color:white;
-    width:fit-content;
-    height:fit-content;
-    float: none;
-    position: absolute;
-    top: 75%;
-    right: 55%;
-    background-color: #222;
-    text-align: center;
-    font-size: smaller;
+div.next-nav{
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 0px auto;
+  cursor: pointer;
+  width: 25%;
+  float: none;
+  position: relative;
+  top: 100%;
+  left: 18%;
+  height: fit-content;
 }
-.main-nav {
-    cursor: pointer;
-    background-color: #222;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 0px auto;
-    cursor: pointer;
-    width: 25%;
-    float: none;
-    position: relative;
-    top: 100%;
-    left: 18%;
-    height: fit-content;
-  }
- button{
-    background-color: rgb(101, 101, 101);
+button.login{
+  background-color: rgb(0, 149, 255);
     border: none;
     color: white;
     padding: 16px 32px;
@@ -68,64 +36,33 @@ span{
     width: fit-content;
     float: none;
     position: absolute;
-    top: 68%;
-    left: 40%;
-  }
-  input[type=submit]:hover{
-    background: #fff;
-      color: gray;
-  }
-  input[type=submit]:focus{
-    background: #fff;
-      color: gray;
-  }
-body, html {
-  height: 100%;
+    top: -20%;
+    left: -100%;
 }
-body {
-  font-family: 'Open Sans';
-  font-weight: 100;
-  display: flex;
-  overflow: hidden;
-}
-
-.login-form {
-  background: #222;
-  box-shadow: 0 0 1rem rgba(0,0,0,0.3);
-  min-height: 10rem;
-  margin: 0 auto;
-  max-width: 50%;
-  padding: .5rem;
-  align-content: center;
-  align-self: center;
-  bottom: 50%;
-}
-.login-text {
-  background: hsl(40,30,60);
-  font-size: 1.5rem;
-  margin: 0 auto;
-  max-width: 50%;
-  padding: .5rem;
-  text-align: center;
-  text-shadow: 1px -1px 0 rgba(0,0,0,0.3);
-}
-
-.login-username, .login-password {
-  background: transparent;
-  border: 0 solid;
-  border-bottom: 1px solid rgba(white, .5);
+.main-nav {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
   color: white;
-  display: block;
-  margin: 1rem;
-  padding: .5rem;
-  transition: 250ms;
-  width: calc(100% - 3rem);
-  font-size: medium;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 0px auto;
+  cursor: pointer;
+  width: 25%;
+  float: none;
+  position: relative;
+  top: 100%;
+  left: 18%;
+  height: fit-content;
 }
-
+span{
+  color:rgba(246, 152, 152, 0.622);
+  margin: 0 auto;
+  text-align: center;
+}
 .login-submit {
   border: 1px solid white;
-  background: transparent;
+  background-color: rgb(0, 149, 255);
   color: white;
   display: block;
   margin: 1rem auto;
@@ -133,34 +70,124 @@ body {
   padding: .25rem;
   transition: 250ms ease-in;
   height:40px;
-  width:80px;
+  width:100%;
   font-size: large;
 }
 
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
 [class*=underlay] {
-    left: 0;
-    min-height: 100%;
-    min-width: 100%;
-    position: fixed;
-    top: 0;
-  }
-  .underlay-photo {
-    animation: hue-rotate 6s infinite;
-    background: url('https://img.freepik.com/free-photo/motherboard-circuit-technology-background-gradient-blue_53876-124645.jpg?w=740&t=st=1660224890~exp=1660225490~hmac=d20723aa0b91f07088e22e45c6d0c8ef8f8a3dd005746f34e90956f2f74d1eda');
-    background-size: cover;
-    -webkit-filter: grayscale(30%);
-    z-index: -1;
-  }
-  .underlay-black {
-    background: rgba(0,0,0,0.7);
-    z-index: -1;
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+}
+.underlay-photo {
+  animation: hue-rotate 6s infinite;
+  background: url('https://img.freepik.com/free-photo/abstract-blur-defocused-shopping-mall_1203-9543.jpg?w=1060&t=st=1660233213~exp=1660233813~hmac=a2f03bea1b0d02acb801b8ac9bad76dac17120d37da196ca4dda1d63e6b48fee');
+  background-size: cover;
+  -webkit-filter: grayscale(30%);
+  z-index: -1;
+}
+.underlay-black {
+  background: rgba(0,0,0,0.7);
+  z-index: -1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+.form{
+  justify-content: center;
+  display:flex;
+}
+
+.login {
+  display: inline-block;
+  border-radius: 2px 2px 5px 5px;
+  padding: 10px 20px 20px 20px;
+  width: 100%;
+  max-width: 320px;
+  background: #ffffff;
+  position: relative;
+  padding-bottom: 80px;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+}
+  
+  input {
+    display: block;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    transition: border-width 0.2s ease;
+    border-radius: 2px;
+    color: #ccc;
+    
   }
   
-  @keyframes hue-rotate {
-    from {
-      -webkit-filter: grayscale(30%) hue-rotate(0deg);
-    }
-    to {
-      -webkit-filter: grayscale(30%) hue-rotate(360deg);
-    }
+  a {
+   font-size: 0.8em;   
   }
+  
+  .title {
+    color: #444;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0 30px 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+  }
+  
+  button {
+    background-color: white;
+    border: none;
+    color: rgb(0, 149, 255);
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 0px auto;
+    cursor: pointer;
+    width: fit-content;
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+  }
+
+  button:hover{
+    background-color: rgb(161, 161, 161);
+    color: rgb(0, 149, 255);
+  }
+    
+    .spinner {
+      display: block;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      border: 4px solid #ffffff;
+      border-top-color: rgba(255,255,255,0.3);
+      border-radius: 100%;
+      left: 50%;
+      top: 0;
+      opacity: 0;
+      margin-left: -20px;
+      margin-top: -20px;
+      animation: spinner 0.6s infinite linear;
+      transition: top 0.3s 0.3s ease,
+                opacity 0.3s 0.3s ease,
+                border-radius 0.3s ease;
+      box-shadow: 0px 1px 0px rgba(0,0,0,0.2);
+    }
