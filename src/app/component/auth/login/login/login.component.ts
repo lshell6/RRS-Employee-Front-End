@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
     });
   }
   toLogin(): void{
-    this.router.navigateByUrl("/login");
+    this.router.navigateByUrl("");
   }
   toSignUp(): void{
     this.router.navigateByUrl("/sign-up");

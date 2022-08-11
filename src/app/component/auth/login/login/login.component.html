@@ -1,34 +1,34 @@
 <nav class="main-nav">
-      <button type="submit" class="signup" value="Sign Up" (click)="toSignUp()">Sign-Up</button>
-  </nav>
-  <br/>
-  <form class="login-form" (submit)="onFormSubmit()" [formGroup]="loginForm">
-      <div class="login-text">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-lock fa-stack-1x"></i>
-        </span>
-      </div>
-      <div class="error-msg">
-          <span *ngIf="message!=''">
-              {{message}}
-              <br/><br/>
-          </span>
-          <input type="username" class="login-username" autofocus="true" formControlName="username" placeholder="Username" />
-          <span *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched">
-              <span *ngIf="loginForm.controls['username'].errors['required']"> Username is Required</span>
-          </span>
-          <br/> <br/>
-          <input type="password" class="login-password" formControlName="password" placeholder="Password" />
-          <span *ngIf="loginForm.controls['password'].invalid
-                        && loginForm.controls['password'].touched">
-                  <span *ngIf="loginForm.controls['password'].errors['required']"> Password is Required</span>
-          </span>
-      </div>
-      <br/> <br/>
-      <input type="submit" name="Login" value="Login" class="login-submit" [disabled]="!loginForm.valid"/>
-      <br/> <br/><br/> <br/>
-  </form>
-  <p class="form-bottom-message"><a routerLink="/verify-username" (click)="toVerifyUsername()">Forgot Password?</a></p>
+      <button class="signup" value="Sign Up" (click)="toLogin()">Login</button>
+</nav>
+<div class="next-nav">
+      <button class="login" value="Login" (click)="toSignUp()">Sign-Up</button>
+</div>
+<div class="form">
+      <form class="login" (submit)="onFormSubmit()" [formGroup]="loginForm">
+            <br/>
+            <p class="title">Login</p>
+            <div class="error-msg">
+                <span *ngIf="message!=''">
+                    {{message}}
+                    <br/><br/>
+                </span>
+                <input type="username" class="login-username" autofocus="true" formControlName="username" placeholder="Username" />
+                <span *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched">
+                    <span *ngIf="loginForm.controls['username'].errors['required']"> Username is Required</span>
+                </span>
+                <br/> <br/>
+                <input type="password" class="login-password" formControlName="password" placeholder="Password" />
+                <span *ngIf="loginForm.controls['password'].invalid
+                              && loginForm.controls['password'].touched">
+                        <span *ngIf="loginForm.controls['password'].errors['required']"> Password is Required</span>
+                </span>
+            </div>
+            <br/> <br/>
+            <input type="submit" name="Login" value="Login" class="login-submit" [disabled]="!loginForm.valid"/>
+            <br/> <br/><br/> <br/>
+            <p class="form-bottom-message"><a routerLink="/verify-username" (click)="toVerifyUsername()">Forgot Password?</a></p>
+        </form>
+</div>
     <div class="underlay-photo"></div>
     <div class="underlay-black"></div> 
