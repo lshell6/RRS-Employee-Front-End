@@ -1,49 +1,60 @@
-<h1>Sign Up</h1>
-<br /><br />
-<div class="user-modal">
-      <div id="signup">
-      <form class = "form" (submit)="onFormSubmit()"[formGroup]="signUpForm">
-            <div class="error-msg">
-                  <span *ngIf="message!=''">
-                      {{message}}
-                      <br/><br/>
-                  </span>
-              </div>
-            <fieldset class="fieldset-style">
-                  <label>Enter Name: </label>
-            <input type="text" name="name"
-                  formControlName="name">
-            </fieldset>
-            <fieldset class="fieldset-style">
-                  <label>Enter UserName: </label>
-            <input type="text" name="username"
-                  formControlName="username">
-            </fieldset>
-            <fieldset class="fieldset-style">
-                  <label>Enter Password: </label>
-                  <input type="password" name="password"
-                  formControlName="password">
-            </fieldset>
-            <fieldset class="fieldset-style">
-                  <label>Enter Password Again: </label>
-                  <input type="password" name="verifyPassword"
-                  formControlName="verifyPassword">
-            </fieldset>
-            <fieldset class="fieldset-style">
-                  <label>Enter Security Question: </label>
-                  <input type="text" name="question"
-                  formControlName="securityQuestion">
-            </fieldset>
-            <fieldset class="fieldset-style">
-                  <label>Enter Security Answer: </label>
-                  <input type="tect" name="answer"
-                  formControlName="securityAnswer">
-            </fieldset>
-            <br/><br/>
-            <p class="fieldset">
-                  <button type="submit"[disabled]="!signUpForm.valid">Sign Up</button>
-            </p>
-            <br/><br/>
-      </form>
+<form class="login-form" (submit)="onFormSubmit()" [formGroup]="signUpForm">
+      <div class="login-text">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-lock fa-stack-1x"></i>
+        </span>
       </div>
-</div>
+      <div class="error-msg">
+          <span *ngIf="message!=''">
+              {{message}}
+              <br/><br/>
+          </span>
+          <input type="text" name="name" class="login-username" formControlName="name" autofocus="true" placeholder="Name">
+          <span *ngIf="signUpForm.controls['name'].invalid
+                          && signUpForm.controls['name'].touched">
+                    <span *ngIf="signUpForm.controls['name'].errors['required']"> Name is Required</span>
+                    <span *ngIf="signUpForm.controls['name'].errors['pattern']"> Pattern allowed: [a-zA-Z ]+</span>
+          </span>
+          <input type="username" class="login-username" autofocus="true" formControlName="username" placeholder="Username" />
+          <span *ngIf="signUpForm.controls['username'].invalid
+                    && signUpForm.controls['username'].touched">
+                    <span *ngIf="signUpForm.controls['username'].errors['required']"> Username is Required</span>
+                    <span *ngIf="signUpForm.controls['username'].errors['minlength']"> Minlength is 10</span>
+                    <span *ngIf="signUpForm.controls['username'].errors['maxlength']"> Max Length is 20</span>
+                    <span *ngIf="signUpForm.controls['username'].errors['pattern']"> Pattern allowed: [0-9 ]+ (Hint: It's your employee ID)</span>
+          </span>
+          <input type="password" class="login-password" formControlName="password" placeholder="Password" />
+          <span *ngIf="!signUpForm.get('password').valid && signUpForm.get('password').touched">Password must contain more than 8 characters, 1 upper case letter, and 1
+              special character
+          </span>
+          <input type="password" name="verifyPassword" class="login-password"
+                    formControlName="verifyPassword" placeholder="Password">
+          <span *ngIf="!signUpForm.get('verifyPassword').valid && signUpForm.get('verifyPassword').touched">Password must contain more than 8 characters, 1 upper case letter, and 1
+                      special character
+          </span>
+          <br/><br/>
+              <select class="securityQuestion">
+                  <option name="default">Select Security Question: </option>
+                  <option *ngFor="let q of securityQuestions" [ngValue]="q">
+                                {{q}}
+                   </option>
+              </select>
+              <br/>
+          <input type="tect" name="answer" class="login-username" formControlName="securityAnswer" placeholder="Security Answer">
+          <span *ngIf="signUpForm.controls['securityAnswer'].invalid
+                          && signUpForm.controls['securityAnswer'].touched">
+              <span *ngIf="signUpForm.controls['securityAnswer'].errors['required']"> Security Answer is Required</span>
+              <span *ngIf="signUpForm.controls['securityAnswer'].errors['pattern']"> Pattern allowed: [a-zA-Z ]+</span>
+          </span>
+      </div>
+      <br/> <br/>
+      <input type="submit" name="Login" value="Sign-Up" class="login-submit" [disabled]="!signUpForm.valid"/>
+      <br/> <br/>
+      <nav class="main-nav">
+          <button type="submit" class="signup" value="Login" (click)="toLogin()">Login</button>
+      </nav>
+      <br/>
+  </form>
+  <div class="underlay-photo"></div>
+  <div class="underlay-black"></div> 

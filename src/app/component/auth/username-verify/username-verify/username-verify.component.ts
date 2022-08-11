@@ -15,6 +15,7 @@ export class UsernameVerifyComponent implements OnInit {
   status: boolean;
   answer: string;
   showSecurityBox: boolean;
+  showPasswordBoxes: boolean;
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -22,6 +23,7 @@ export class UsernameVerifyComponent implements OnInit {
     this.msg = '';
     this.status = true;
     this.showSecurityBox=false;
+    this.showPasswordBoxes=false;
   }
 
   onSubmit(): void{
@@ -43,7 +45,7 @@ export class UsernameVerifyComponent implements OnInit {
       next: (data=>{
         if(data===true){
           this.authService.user$.next(this.username);
-          this.router.navigateByUrl('/password-reset');
+          this.showPasswordBoxes=true;
         }
         else{
           this.authService.message$.next('Could not be verified');

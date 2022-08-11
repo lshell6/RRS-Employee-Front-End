@@ -1,27 +1,34 @@
-<div class="user-modal">
-    <h1>
-        Verify Your Username
-    </h1>
-    <fieldset class="fieldset-style">
-        <div class="message">
-            <span *ngIf="msg !=''">{{msg}}</span>
-        </div>
-    <legend>Step 1: Enter Username </legend>
-    <input type="text" [(ngModel)]="username">
-    <br /><br />
-    <input type="submit" (click)="onSubmit()" [disabled]="!status" value="Verify Username">
-    </fieldset>
-    <br /><br />
+<div class="login-form">
+    <div class="login-text">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-lock fa-stack-1x"></i>
+      </span>
+    </div>
+    <h1>Reset Your Password</h1>
+    <div class="error-msg">
+        <span *ngIf="msg!=''">
+            {{msg}}
+            <br/><br/>
+        </span>
+    </div>
     <div>
-        <fieldset class = "fieldset-style">
-            <legend>Step 2: Answer Security Question</legend>
-            <label class="question">
-                {{dto?.securityQuestion}}
-            </label>
-            <br /><br />
-            <input [(ngModel)]="answer" type = "text">
-            <br /><br />
-            <input type="submit" (click)="onQuestionSubmit()" [disabled]="!status" value="Submit Answer">
-        </fieldset>
+        <legend>Step 1: Enter Your Username</legend>
+        <input type="username" class="login-username" autofocus="true" formControlName="username" placeholder="Username" />
+        <input type="submit" class="login-submit" (click)="onSubmit()" [disabled]="!status" value="Verify Username">
+        <br/> <br/>
+        <div *ngIf="showSecurityBox">
+                <legend>Step 2: Answer Security Question</legend>
+                <label class="question">
+                    {{dto?.securityQuestion}}
+                </label>
+                <input [(ngModel)]="answer" type = "text" class="login-username" autofocus="true" placeholder="Security Answer">
+                <input type="submit" class="login-submit" (click)="onQuestionSubmit()" [disabled]="!status" value="Submit Answer">
+    </div>
+    <br/> <br/>
+    <div *ngIf="showPasswordBoxes" class = "passResetForm">
+        <app-reset-password></app-reset-password>
     </div>
 </div>
+<div class="underlay-photo"></div>
+<div class="underlay-black"></div> 

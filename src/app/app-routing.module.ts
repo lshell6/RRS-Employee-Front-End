@@ -7,8 +7,7 @@ import { SignUpComponent } from './component/auth/sign-up/sign-up.component';
 import { UsernameVerifyComponent } from './component/auth/username-verify/username-verify/username-verify.component';
 
 const routes: Routes = [
-  {path: '', component: AppComponent},
-  {path:'login' ,component: LoginComponent},
+  {path:'' ,component: LoginComponent},
   {path:'sign-up' ,component: SignUpComponent},
   {path: 'password-reset', component: ResetPasswordComponent},
   {path: 'verify-username', component: UsernameVerifyComponent}

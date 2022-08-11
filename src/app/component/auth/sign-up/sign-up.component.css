@@ -1,143 +1,166 @@
-.error-msg{
-    color: white;
-    font-weight: bolder;
-    text-align: center;
-}
-form.form{
-  border: white;
-  border-style: double;
-  border-radius: 20px;
-  border-width: 10px;
-}
-fieldset.fieldset-style{
-  background-color: rgb(94, 149, 217);
-}
-*, *:before, *:after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-    background: #ededed;
-  }
-  
-  input, button {
-    border: none;
-    outline: none;
-    background: none;
-    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  }
-  
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
-  @mixin signUpActive {
-    .cont.s--signup & {
-      @content;
-    }
-  }
-  
-  .tip {
-    font-size: 20px;
-    margin: 40px auto 50px;
-    text-align: center;
-  }
-  
-  .cont {
-    overflow: hidden;
-    position: relative;
-    height: 550px;
-    margin: 0 auto 100px;
-    background: #fff;
-  }
-  
-  .form {
-    position: relative;
-    height: 100%;
-    padding: 50px 30px 0;
-  }
-  
-  .sub-cont {
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    height: 100%;
-    background: #fff;
-  
-    @include signUpActive {
-      transform: translate3d($formW * -1,0,0);
-    }
-  }
-  
-  button {
-    display: block;
-    margin: 0 auto;
-    border-radius: 30px;
-    color: #fff;
-    font-size: 15px;
+select{
+    height: auto;
+    padding: 15px;
     cursor: pointer;
+    font-weight: 400;
+    color: rgb(224, 224, 224);
+    background-color: #222;
+    width:100%;
+    height:40px;
+    border: none;
   }
-  
-  .img {
-    overflow: hidden;
-    z-index: 2;
+.error-msg{
+    font-weight: bolder;
+    font-size: small;
+    text-align: center;
+    color:red;
+} 
+a{
+    color:white;
+    font-size: small;
+    text-align: center;
+}
+span{
+    color:rgba(255, 255, 255, 0.622);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+.form-bottom-message{
+    color:white;
+    width:fit-content;
+    height:fit-content;
+    float: none;
     position: absolute;
+    top: 75%;
+    right: 55%;
+    background-color: #222;
+    text-align: center;
+    font-size: smaller;
+}
+.main-nav {
+    cursor: pointer;
+    background-color: #222;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 0px auto;
+    cursor: pointer;
+    width: 25%;
+    float: none;
+    position: relative;
+    top: 100%;
+    left: 18%;
+    height: fit-content;
+  }
+ button{
+    background-color: rgb(101, 101, 101);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 0px auto;
+    cursor: pointer;
+    width: fit-content;
+    float: none;
+    position: absolute;
+    top: 68%;
+    left: 40%;
+  }
+  input[type=submit]:hover{
+    background: #fff;
+      color: gray;
+  }
+  input[type=submit]:focus{
+    background: #fff;
+      color: gray;
+  }
+body, html {
+  height: 100%;
+}
+body {
+  font-family: 'Open Sans';
+  font-weight: 100;
+  display: flex;
+  overflow: hidden;
+}
+
+.login-form {
+  background: #222;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+  min-height: 10rem;
+  margin: 0 auto;
+  max-width: 50%;
+  padding: .5rem;
+  align-content: center;
+  align-self: center;
+  bottom: 50%;
+}
+.login-text {
+  background: hsl(40,30,60);
+  font-size: 1.5rem;
+  margin: 0 auto;
+  max-width: 50%;
+  padding: .5rem;
+  text-align: center;
+  text-shadow: 1px -1px 0 rgba(0,0,0,0.3);
+}
+
+.login-username, .login-password {
+  background: transparent;
+  border: 0 solid;
+  border-bottom: 1px solid rgba(white, .5);
+  color: white;
+  display: block;
+  margin: 1rem;
+  padding: .5rem;
+  transition: 250ms;
+  width: calc(100% - 3rem);
+  font-size: medium;
+}
+
+.login-submit {
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  display: block;
+  margin: 1rem auto;
+  min-width: 1px;
+  padding: .25rem;
+  transition: 250ms ease-in;
+  height:40px;
+  width:80px;
+  font-size: large;
+}
+
+[class*=underlay] {
     left: 0;
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
     top: 0;
-    height: 100%;
-    padding-top: 360px;
+  }
+  .underlay-photo {
+    animation: hue-rotate 6s infinite;
+    background: url('https://img.freepik.com/free-photo/motherboard-circuit-technology-background-gradient-blue_53876-124645.jpg?w=740&t=st=1660224890~exp=1660225490~hmac=d20723aa0b91f07088e22e45c6d0c8ef8f8a3dd005746f34e90956f2f74d1eda');
+    background-size: cover;
+    -webkit-filter: grayscale(30%);
+    z-index: -1;
+  }
+  .underlay-black {
+    background: rgba(0,0,0,0.7);
+    z-index: -1;
   }
   
-  h1 {
-    width: 100%;
-    font-size: 26px;
-    text-align: center;
-    color:white;
-  }
-  
-  label {
-    display: block;
-    margin: 25px auto 0;
-    text-align: center;
-    color:white;
-  }
-  
-  input {
-    display: block;
-    width: 100%;
-    margin-top: 5px;
-    padding-bottom: 5px;
-    font-size: 16px;
-    border-bottom: 1px solid rgba(0,0,0,0.4);
-    text-align: center;
-  }
-  
-  .forgot-pass {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 12px;
-    color: #cfcfcf;
-  }
-  
-  .submit {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    padding: 50px;
-  }
-  
-  .fb-btn {
-    border: 2px solid #d3dae9;
-    color: darken(#d3dae9, 20%);
-  
-  }
-  
-  .sign-in {
-    transition-timing-function: ease-out;
-  }
-  
-  .icon-link {
-    position: absolute;
-    left: 5px;
-    bottom: 5px;
-    width: 32px;
+  @keyframes hue-rotate {
+    from {
+      -webkit-filter: grayscale(30%) hue-rotate(0deg);
+    }
+    to {
+      -webkit-filter: grayscale(30%) hue-rotate(360deg);
+    }
   }

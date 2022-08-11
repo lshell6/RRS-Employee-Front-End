@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
 
@@ -12,6 +13,7 @@ export class ResetPasswordComponent implements OnInit {
   repassword: string;
   username: string;
   msg: string;
+  passResetForm: FormGroup;
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -20,24 +22,30 @@ export class ResetPasswordComponent implements OnInit {
     this.authService.user$.subscribe(data=>{
       this.username=data;
     })
+    this.passResetForm = new FormGroup({
+      password: new FormControl('', [Validators.required,Validators.minLength(8),
+        Validators.maxLength(20), Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)]),
+      repassword: new FormControl('', [Validators.required,Validators.minLength(8),
+          Validators.maxLength(20), Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)])
+    })
   }
   onReset(){
     if(this.password === this.repassword){
       this.authService.resetPassword(this.username, this.password).subscribe({
         next: (data)=>{
           this.authService.message$.next('Password reset successful, please login!');
-          this.router.navigateByUrl("/login");
+          this.router.navigateByUrl("");
         },
         error: (e)=>{
           this.msg = "Reset unsuccessful, please try again later!";
         }
       });
     }
+    else{
+      this.msg = "Passwords do not match, please try again"
+    }
   }
-  toLogin(): void{
-    this.router.navigateByUrl("/login");
-  }
-  toSignUp(): void{
-    this.router.navigateByUrl("/sign-up");
+  onCancel():void{
+    this.router.navigateByUrl("");
   }
 }
