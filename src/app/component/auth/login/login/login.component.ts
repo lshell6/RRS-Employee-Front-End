@@ -23,31 +23,32 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.loginForm = new FormGroup({
-      username: new FormControl('',[Validators.required]),
-      password: new FormControl('', [Validators.required])
-    });
+    // this.loginForm = new FormGroup({
+    //   username: new FormControl('',[Validators.required]),
+    //   password: new FormControl('', [Validators.required])
+    // });
 
-    this.authService.message$.subscribe(data=>{
-      this.message = data;
-    })
+    // this.authService.message$.subscribe(data=>{
+    //   this.message = data;
+    // })
   }
   onFormSubmit(){
-    this.username = this.loginForm.value.username;
-    this.password = this.loginForm.value.password;
+    // this.username = this.loginForm.value.username;
+    // this.password = this.loginForm.value.password;
 
-    this.authService.login(this.username,this.password).subscribe({
-      next : (data)=>{
-          this.employee = data;
-          localStorage.setItem('username',this.employee.username);
-          localStorage.setItem('credentials', btoa(this.username + ':' + this.password));
-          this.authService.username$.next(this.employee.username);
-          this.router.navigateByUrl('/');
-      },
-      error: (e)=> {
-        this.authService.message$.next("Invalid Credentials");
-      }
-    });
+    // this.authService.login(this.username,this.password).subscribe({
+    //   next : (data)=>{
+    //       this.employee = data;
+    //       localStorage.setItem('username',this.employee.username);
+    //       localStorage.setItem('credentials', btoa(this.username + ':' + this.password));
+    //       this.authService.username$.next(this.employee.username);
+    //       this.router.navigateByUrl('/dashboard');
+    //   },
+    //   error: (e)=> {
+    //     this.authService.message$.next("Invalid Credentials");
+    //   }
+    // });
+    this.router.navigateByUrl('/dashboard');
   }
   toLogin(): void{
     this.router.navigateByUrl("");

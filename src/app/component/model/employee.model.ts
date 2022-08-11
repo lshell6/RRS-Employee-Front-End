@@ -3,6 +3,8 @@ export class Employee{
     name: string;
     username: string;
     password?: string;
+    current_points?: number;
+    total_points?: number;
   }
   
   export class EmployeeDto{
