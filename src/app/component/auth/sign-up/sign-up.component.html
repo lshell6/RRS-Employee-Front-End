@@ -1,9 +1,3 @@
-<nav class="main-nav">
-      <button class="signup" value="Sign Up" (click)="toSignUp()">Sign-Up</button>
-</nav>
-<div class="next-nav">
-      <button class="login" value="Login" (click)="toLogin()">Login</button>
-</div>
 <div class="form">
       <form class="login" (submit)="onFormSubmit()" [formGroup]="signUpForm">
             <br/>
@@ -19,18 +13,21 @@
                           <span *ngIf="signUpForm.controls['name'].errors['required']"> Name is Required</span>
                           <span *ngIf="signUpForm.controls['name'].errors['pattern']"> Pattern allowed: [a-zA-Z ]+</span>
                 </span>
-                <input type="username" class="login-username" autofocus="true" formControlName="username" placeholder="Username">
+                <br/>
+                <input type="username" class="login-username" autofocus="true" formControlName="username" placeholder="Employee ID">
                 <span *ngIf="signUpForm.controls['username'].invalid
                           && signUpForm.controls['username'].touched">
-                          <span *ngIf="signUpForm.controls['username'].errors['required']"> Username is Required</span>
+                          <span *ngIf="signUpForm.controls['username'].errors['required']"> Employee ID is Required</span>
                           <span *ngIf="signUpForm.controls['username'].errors['minlength']"> Minlength is 10</span>
                           <span *ngIf="signUpForm.controls['username'].errors['maxlength']"> Max Length is 20</span>
                           <span *ngIf="signUpForm.controls['username'].errors['pattern']"> Pattern allowed: [0-9 ]+ (Hint: It's your employee ID)</span>
                 </span>
+                <br/>
                 <input type="password" class="login-password" formControlName="password" placeholder="Password" />
                 <span *ngIf="!signUpForm.get('password').valid && signUpForm.get('password').touched">Password must contain more than 8 characters, 1 upper case letter, and 1
                     special character
                 </span>
+                <br/>
                 <input type="password" name="verifyPassword" class="login-password"
                           formControlName="verifyPassword" placeholder="Password">
                 <span *ngIf="!signUpForm.get('verifyPassword').valid && signUpForm.get('verifyPassword').touched">Password must contain more than 8 characters, 1 upper case letter, and 1
@@ -53,6 +50,8 @@
             </div>
             <br/> <br/>
             <input type="submit" name="Login" value="Sign-Up" class="login-submit" [disabled]="!signUpForm.valid"/>
+            <br/> <br/><br/> <br/>
+            <p class="form-bottom-message"><a routerLink="/verify-username" (click)="toLogin()">Already have an account? Click here to login</a></p>
         </form>
 </div>
   <div class="underlay-photo"></div>

@@ -21,4 +21,7 @@ export class ProfileComponent implements OnInit {
   logout(): void{
     this.router.navigateByUrl('/logout');
   }
+  editProfile():void{
+    this.router.navigateByUrl('/edit');
+  }
 }

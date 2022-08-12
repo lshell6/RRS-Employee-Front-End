@@ -19,4 +19,7 @@ employee:Employee;
   toProfile():void{
     this.router.navigateByUrl('/profile');
   }
+  editProfile():void{
+    this.router.navigateByUrl('/edit');
+  }
 }

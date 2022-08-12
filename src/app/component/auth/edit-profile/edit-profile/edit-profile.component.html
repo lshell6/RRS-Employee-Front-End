@@ -1,0 +1,82 @@
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-8 col-lg-6">
+        <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <nav class = "nav">
+                <a routerLink="/dashboard" (click)="toDashboard()">Home</a> 
+                &nbsp;&nbsp;&nbsp;
+                <a routerLink="/profile" (click)="toProfile()">Profile</a>
+                &nbsp;&nbsp;&nbsp;
+                <a routerLink="/redeem">Redeem Points</a>
+                &nbsp;&nbsp;&nbsp;
+                <a routerLink="/edit" class="active">Edit Profile</a>
+                &nbsp;&nbsp;&nbsp;
+                <a routerLink="/logout" class="logout" (click)="logout()">Logout</a>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="form">
+    <div class="login" [formGroup]="editProfileForm">
+        <div class="login-text">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-lock fa-stack-1x"></i>
+            </span>
+        </div>
+          <h1>Edit Profile</h1>
+          <div class="error-msg">
+              <span *ngIf="message!=''">
+                  {{message}}
+                  <br/><br/>
+              </span>
+          </div>
+          <div>
+            <legend>Name</legend>
+            <br>
+            <input type="text" class="login-username" autofocus="true" formControlName="name" placeholder="employee.name">
+            <span *ngIf="editProfileForm.controls['name'].invalid
+                                && editProfileForm.controls['name'].touched">
+                          <span *ngIf="editProfileForm.controls['name'].errors['required']"> Name is Required</span>
+                          <span *ngIf="editProfileForm.controls['name'].errors['pattern']"> Pattern allowed: [a-zA-Z ]+</span>
+                </span>
+              <legend>Employee ID</legend>
+              <br/>
+              <input type="text" class="login-username" autofocus="true" placeholder="employee.username" disabled/>
+              <br/> <br/>
+              <div class="security">
+                      <legend>Current Security Question</legend>
+                      <br>
+                      <label class="question">
+                          {{dto?.securityQuestion}}
+                      </label>
+                      <input [(ngModel)]="answer" type = "text" class="login-username" autofocus="true" placeholder="employee.securityAnswer">
+                      <input type="submit" class="login-submit" (click)="onQuestionSubmit()" value="Submit Answer">
+            </div>
+            <input type="submit" class="login-submit" (click)="changeSecurityQ()" value="Change Security Question">
+            <div *ngIf="changeSecurityQuestion">
+                <legend>Pick New Security Question</legend>
+                <select class="securityQuestion">
+                    <option name="default"></option>
+                    <!-- <option name="default">{{dto.securityQuestion}}</option> -->
+                    <option *ngFor="let q of securityQuestions" [ngValue]="q">
+                                  {{q}}
+                     </option>
+                </select>
+                <br/><br/>
+                <input type="text" name="answer" class="login-username" formControlName="securityAnswer" placeholder="Security Answer">
+                <span *ngIf="editProfileForm.controls['securityAnswer'].invalid
+                                && editProfileForm.controls['securityAnswer'].touched">
+                    <span *ngIf="editProfileForm.controls['securityAnswer'].errors['required']"> Security Answer is Required</span>
+                    <span *ngIf="editProfileForm.controls['securityAnswer'].errors['pattern']"> Pattern allowed: [a-zA-Z ]+</span>
+                </span>
+            </div>
+            <input type="submit" class="login-submit" (click)="showChangePassword()" value="Change Password">
+          <br/> <br/>
+          <div *ngIf="changePassword" class = "passResetForm">
+              <app-reset-password></app-reset-password>
+          </div>
+          <input type="submit" name="Login" class="login-submit" value="Cancel Changes" class="login-submit" (click)="onCancel()"/>
+          <input type="submit" value="Save Changes" class="login-submit" (submit)="onFormSubmit()">
+        </div>
+</div>
+<div class="underlay-photo"></div>
+<div class="underlay-black"></div> 
