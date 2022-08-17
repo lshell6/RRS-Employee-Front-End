@@ -12,6 +12,7 @@ import { UsernameVerifyComponent } from './component/auth/username-verify/userna
 import { DashboardComponent } from './component/dashboard/dashboard/dashboard.component';
 import { LogoutComponent } from './component/auth/logout/logout/logout.component';
 import { ProfileComponent } from './component/profile/profile/profile.component';
+import { EditProfileComponent } from './component/auth/edit-profile/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ProfileComponent } from './component/profile/profile/profile.component'
     DashboardComponent,
     LogoutComponent,
     ProfileComponent,
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,

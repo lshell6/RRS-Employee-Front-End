@@ -16,7 +16,7 @@ export class AuthguardService {
     if(status == false){
       //redirect to logincomponent
        this.authService.message$.next('please login to continue..');
-       this.router.navigateByUrl('/login');
+       this.router.navigateByUrl('/');
     }
 
      return status;

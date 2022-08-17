@@ -15,12 +15,14 @@ export class SignUpComponent implements OnInit {
   message: string;
   verify: boolean;
   securityQuestions: any =[];
+  securityQuestion: string;
   
   constructor(private authService: AuthService, private router:Router) { }
 
   ngOnInit(): void {
     this.verify = false;
     this.message='';
+    this.securityQuestion='';
     this.securityQuestions = [
       "Where were you born?",
       "What was your first pet's name?",
@@ -35,7 +37,7 @@ export class SignUpComponent implements OnInit {
         Validators.maxLength(20), Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)]),
       verifyPassword: new FormControl('', [Validators.required,Validators.minLength(8),
         Validators.maxLength(20), Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)]),
-      //securityQuestion: new FormControl(''),
+      //securityQuestion: new FormControl(this.securityQuestion),
       securityAnswer: new FormControl('', [Validators.required,Validators.pattern(/^[a-zA-Z ]+$/)])
     });
   }
@@ -48,7 +50,7 @@ export class SignUpComponent implements OnInit {
         securityAnswer: this.signUpForm.value.securityAnswer,
         securityQuestion: this.signUpForm.value.securityQuestion,
         encodedCredentials: btoa(this.signUpForm.value.username
-          + '@%' + this.signUpForm.value.password)
+          + '--' + this.signUpForm.value.password)
       }
       //aGFycnkrPStwb3R0ZXI=
       console.log(this.employeeDto);
@@ -71,7 +73,7 @@ export class SignUpComponent implements OnInit {
   toLogin(): void{
     this.router.navigateByUrl("");
   }
-  toSignUp(): void{
-    this.router.navigateByUrl("/sign-up");
-  }
+  // toSignUp(): void{
+  //   this.router.navigateByUrl("/sign-up");
+  // }
 }

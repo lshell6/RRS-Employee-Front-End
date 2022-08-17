@@ -34,8 +34,7 @@ export class AuthService {
 
   isLoggedIn(): boolean{
     //check if the user is logged in or not.
-    //this.username = localStorage.getItem('username');
-    //console.log(this.username);
+    this.username = localStorage.getItem('username');
     if(this.username == null)
         return false;
     return true;

@@ -50,7 +50,7 @@ export class UsernameVerifyComponent implements OnInit {
     //     }
     //     else{
     //       this.authService.message$.next('Could not be verified');
-    //       this.router.navigateByUrl('/login');
+    //       this.router.navigateByUrl('');
     //     }
     //   }),
     // error: (e)=>{ }

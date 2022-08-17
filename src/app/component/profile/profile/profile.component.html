@@ -12,9 +12,9 @@
                       &nbsp;&nbsp;&nbsp;
                       <a routerLink="/redeem">Redeem Points</a>
                       &nbsp;&nbsp;&nbsp;
-                      <a routerLink="/edit">Edit Profile</a>
+                      <a routerLink="/edit" (click)="editProfile()">Edit Profile</a>
                       &nbsp;&nbsp;&nbsp;
-                      <a routerLink="/logout" (click)="logout()">Logout</a>
+                      <a routerLink="/logout" class="logout" (click)="logout()">Logout</a>
                   </nav>
             </div>
           </div>
@@ -38,3 +38,5 @@
           </div>
         </div>
       </div>
+      <div class="underlay-photo"></div>
+  <div class="underlay-black"></div> 

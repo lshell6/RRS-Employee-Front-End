@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { AuthService } from './component/auth/service/auth.service';
 import { Employee } from './component/model/employee.model';
 import { EmployeeService } from './component/service/employee.service';
@@ -10,7 +11,7 @@ import { EmployeeService } from './component/service/employee.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  employees: Employee[];
+  employees: Observable<Employee[]>;
   
   username: string;
 

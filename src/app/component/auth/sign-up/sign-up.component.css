@@ -9,22 +9,14 @@ select{
   height:40px;
   border: none;
 }
-div.next-nav{
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-decoration: none;
-  margin: 0px auto;
-  cursor: pointer;
-  width: 25%;
-  float: none;
-  position: relative;
-  top: 100%;
-  left: 18%;
-  height: fit-content;
-}
+a {
+  color:rgb(0, 149, 255);  
+ }
+ p.form-bottom-message{
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+ }
 button.login{
   background-color: rgb(0, 149, 255);
     border: none;
@@ -56,7 +48,7 @@ button.login{
   height: fit-content;
 }
 span{
-  color:rgba(246, 152, 152, 0.622);
+  color:rgba(255, 0, 0, 0.622);
   margin: 0 auto;
   text-align: center;
 }
@@ -135,8 +127,7 @@ body {
     border: 1px solid #ddd;
     transition: border-width 0.2s ease;
     border-radius: 2px;
-    color: #ccc;
-    
+    color: rgb(99, 99, 99);
   }
   
   a {

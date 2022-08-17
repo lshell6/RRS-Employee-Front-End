@@ -4,6 +4,24 @@ nav {
     padding: 8px;
     align-items: center;
   }
+  [class*=underlay] {
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    top: 0;
+  }
+  .underlay-photo {
+    animation: hue-rotate 6s infinite;
+    background: url('https://img.freepik.com/free-photo/abstract-blur-defocused-shopping-mall_1203-9543.jpg?w=1060&t=st=1660233213~exp=1660233813~hmac=a2f03bea1b0d02acb801b8ac9bad76dac17120d37da196ca4dda1d63e6b48fee');
+    background-size: cover;
+    -webkit-filter: grayscale(30%);
+    z-index: -1;
+  }
+  .underlay-black {
+    background: rgba(0,0,0,0.7);
+    z-index: -1;
+  }
   a{
     text-decoration: none;
         color: rgb(219, 216, 216);
@@ -29,6 +47,10 @@ nav {
     -webkit-text-stroke: 1px white;
   }
 
+  .logout{
+    float: right;
+  }
+
 body{margin-top:20px;
     background:#eee;
     }
@@ -50,7 +72,6 @@ body{margin-top:20px;
         padding: 30px 30px 0 30px;
         background-color: rgb(0, 149, 255);
         overflow: hidden;
-        height: 100%;
     }
     .single_advisor_profile .advisor_thumb::after {
         -webkit-transition-duration: 500ms;
@@ -58,17 +79,16 @@ body{margin-top:20px;
         position: absolute;
         width: 150%;
         height: 60px;
-        bottom: -45px;
+        bottom: -50px;
         left: -25%;
         content: "";
-        background-color: #ffffff;
+        background-color: rgb(0, 149, 255);
         color:rgb(0, 149, 255);
-        -webkit-transform: rotate(-15deg);
-        transform: rotate(-15deg);
+        
     }
     @media only screen and (max-width: 575px) {
         .single_advisor_profile .advisor_thumb::after {
-            height: 100%;
+            height: 160px;
             bottom: -90px;
         }
     }
@@ -142,8 +162,8 @@ body{margin-top:20px;
             font-size: 12px;
         }
     }
-    .single_advisor_profile:hover .advisor_thumb::after,
-    .single_advisor_profile:focus .advisor_thumb::after {
+     .advisor_thumb::after,
+    .advisor_thumb::after {
         background-color: #57c2d8;
     }
     .single_advisor_profile:hover .advisor_thumb .social-info a,
