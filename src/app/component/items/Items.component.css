@@ -1,224 +1,187 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,600,700,800, 800i, 900&display=swap');
-
-* {
-    padding: 0;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
+div.next-nav{
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 0px auto;
+  cursor: pointer;
+  width: 25%;
+  float: none;
+  position: relative;
+  top: 100%;
+  left: 18%;
+  height: fit-content;
 }
-
-html {
-    color: rgb(249, 252, 252);
-    background-color: rgb(0, 0, 0);
+button.login{
+  background-color: rgb(0, 149, 255);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 0px auto;
+    cursor: pointer;
+    width: fit-content;
+    float: none;
+    position: absolute;
+    top: -20%;
+    left: -100%;
+}
+.main-nav {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 0px auto;
+  cursor: pointer;
+  width: 25%;
+  float: none;
+  position: relative;
+  top: 100%;
+  left: 18%;
+  height: fit-content;
+}
+h1, legend{
+  color:rgb(0, 149, 255);
+  text-align: center;
+}
+div.login-text{
+  color:rgb(0, 149, 255);
+  margin: 0 auto;
+  text-align: center;
+  font-size: xx-large;
+}
+.login-submit {
+  border: 1px solid white;
+  background-color: rgb(0, 149, 255);
+  color: white;
+  display: block;
+  margin: 1rem auto;
+  min-width: 1px;
+  padding: .25rem;
+  transition: 250ms ease-in;
+  height:40px;
+  width:100%;
+  font-size: large;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-image:url(https://i.pinimg.com/736x/9e/db/94/9edb940ae49fc5a16184eff748157eb2--hexagons.jpg);
+  font-family: "Open Sans", sans-serif;
 }
 
-.container {
-    position: relative;
+[class*=underlay] {
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+}
+.underlay-photo {
+  animation: hue-rotate 6s infinite;
+  background: url('https://img.freepik.com/free-photo/abstract-blur-defocused-shopping-mall_1203-9543.jpg?w=1060&t=st=1660233213~exp=1660233813~hmac=a2f03bea1b0d02acb801b8ac9bad76dac17120d37da196ca4dda1d63e6b48fee');
+  background-size: cover;
+  -webkit-filter: grayscale(30%);
+  z-index: -1;
+}
+.underlay-black {
+  background: rgba(0,0,0,0.7);
+  z-index: -1;
 }
 
-.container .card {
-    position: relative;
-    width: 320px;
-    height: 450px;
-    background: #232323;
-    border-radius: 20px;
-    overflow: hidden;
+* {
+  box-sizing: border-box;
 }
 
-.container .card:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+.form{
+  justify-content: center;
+  display:flex;
+}
+
+.login {
+  display: inline-block;
+  border-radius: 2px 2px 5px 5px;
+  padding: 10px 20px 20px 20px;
+  width: 100%;
+  max-width: 320px;
+  background: #ffffff;
+  position: relative;
+  padding-bottom: 80px;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+}
+  
+  input {
+    display: block;
+    padding: 15px 10px;
+    margin-bottom: 10px;
     width: 100%;
-    height: 100%;
-    background: #1BBFE9;
-    clip-path: circle(150px at 80% 20%);
-    transition: 0.5s ease-in-out;
-}
-
-.container .card:hover:before {
-    clip-path: circle(300px at 80% -20%);
-}
-
-.container .card:after {
-    content: "RRS";
-    position: absolute;
-    top: 30%;
-    left: -10%;
-    font-size: 150px;
-    font-weight: 800;
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.04);
-
-}
-
-.container .card .imgBx {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1000;
-    width: 100%;
-    height: 100%;
-    transition: .5s;
-}
-
-.container .card:hover .imgBx {
-    top: 0%;
-    transform: translateY(-25%);
-    /* bug  */
-}
-
-.container .card .imgBx img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(20deg);
-    width: 200px;
-}
-
-.container .card .contentBx {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
-    text-align: center;
-    transition: 1s;
-    z-index: 90;
-}
-
-.container .card:hover .contentBx {
-    height: 210px;
-}
-
-.container .card .contentBx h2 {
-    position: relative;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: #fff;
-}
-
-.container .card .contentBx .size,
-.container .card .contentBx .color,
-.container .card .contentBx .cost {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 20px;
-    transition: .5s;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.container .card:hover .contentBx .size {
-    opacity: 1;
-    visibility: visible;
-    transition-delay: .5s;
-}
-
-.container .card:hover .contentBx .color {
-    opacity: 1;
-    visibility: visible;
-    transition-delay: .6s;
-}
-
-.container .card:hover .contentBx .cost {
-    opacity: 1;
-    visibility: visible;
-    transition-delay: .7s;
-}
-
-.container .card .contentBx .size h3,
-.container .card .contentBx .color h3,
-.container .card .contentBx .cost h3 {
-    color: white;
-    font-weight: 300;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-right: 10px;
-}
-
-.container .card .contentBx .size span {
-    width: 26px;
-    height: 26px;
-    text-align: center;
-    line-height: 26px;
-    font-size: 14px;
-    display: inline-block;
-    color: #111;
-    background: #fff;
-    margin: 0 5px;
-    transition: .5s;
-    color: #111;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.container .card .contentBx .size span:hover {  /* other bug */
-    background: #9b9a9a;
-}
-
-.container .card .contentBx .color span {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin: 0 5px;
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-}
-
-.container .card .contentBx .color span .active:after {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 2px solid rgb(255, 255, 255);
-    position: absolute;
-    box-sizing: border-box;
-}
-
-.container .card .contentBx .color span:nth-child(2) {
-     background: #fa0202;
-}
-
-.container .card .contentBx .color span:nth-child(3) {
-     background: #1B2FE9;
-}
-
-.container .card .contentBx .color span:nth-child(4) {
-     background: #8b8989;
-}
-
-.container .card .contentBx button {
-    display:inline-block;
-    padding: 10px 20px;
-    background: #fff;
-    border-radius: 4px;
-    margin-top: 10px;
+    border: 1px solid #ddd;
+    transition: border-width 0.2s ease;
+    border-radius: 2px;
+    color: #ccc;
+    
+  }
+  
+  a {
+   color:rgb(0, 149, 255);  
+  }
+  
+  .title {
+    color: #444;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0 30px 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+  }
+  
+  button {
+    background-color: white;
+    border: none;
+    color: rgb(0, 149, 255);
+    padding: 16px 32px;
     text-decoration: none;
-    font-weight: 600;
-    color: rgb(252, 250, 250);
-    opacity: 0;
-    transform: translateY(50px);
-    transition: .5s;
-}
+    margin: 0px auto;
+    cursor: pointer;
+    width: fit-content;
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+  }
 
-.container .card:hover .contentBx button {
-    opacity: 1;
-    transform: translateY(0px);
-    transition-delay: .8s;
-} 
-
-.container .card .contentBx button:hover {
-    transition-delay: 0s;
-    background: rgb(115, 115, 115);
-}
-
+  button:hover{
+    background-color: rgb(161, 161, 161);
+    color: rgb(0, 149, 255);
+  }
+    
+    .spinner {
+      display: block;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      border: 4px solid #ffffff;
+      border-top-color: rgba(255,255,255,0.3);
+      border-radius: 100%;
+      left: 50%;
+      top: 0;
+      opacity: 0;
+      margin-left: -20px;
+      margin-top: -20px;
+      animation: spinner 0.6s infinite linear;
+      transition: top 0.3s 0.3s ease,
+                opacity 0.3s 0.3s ease,
+                border-radius 0.3s ease;
+      box-shadow: 0px 1px 0px rgba(0,0,0,0.2);
+    }
