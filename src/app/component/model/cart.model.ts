@@ -1,5 +1,6 @@
 export class Cart{
     id: number;
     name: string;
-	point_value: number;
+    point_value: number;
+    total: number;
 }
