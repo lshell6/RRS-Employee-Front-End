@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="items.component.css">
+
+    <title>Redeem Points</title>
+
+</head>
+<h1>Shop Items</h1>
+<hr>
+<body>
+    <div class="container" >
+        <div class="card">
+            <div class="imgBx">
+                <img src="https://pngimg.com/uploads/tshirt/tshirt_PNG5448.png" alt="t-shirt">
+            </div>
+
+            <div class="contentBx">
+
+                <h2>T-Shirt</h2>
+
+                <div class="size">
+                    <h3>Size :</h3>
+                    <span>S</span>
+                    <span>M</span>
+                    <span>L</span>
+                    <span>XL</span>
+                </div>
+
+                <div class="color span">
+
+                    <h3>Color: </h3>
+                    <span class="span:nth-child(2)" data-pic="https://pngimg.com/uploads/tshirt/tshirt_PNG5449.png"></span>
+                    <span class="span:nth-child(3)" data-pic="https://pngimg.com/uploads/tshirt/tshirt_PNG5436.png"></span>
+                    <span class="span:nth-child(4)" data-pic="https://pngimg.com/uploads/tshirt/tshirt_PNG5448.png"></span>
+                    
+                </div>
+                <div class="cost">
+                    <h3> Cost: 25 pts</h3>                  
+                </div>
+                <button (click)="addToCart()">Add To cart</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container" >
+      <div class="card">
+          <div class="imgBx">
+              <img src="https://pngimg.com/uploads/hat/hat_PNG5697.png" alt="hat">
+          </div>
+
+          <div class="contentBx">
+
+              <h2>Hat</h2>
+
+              <div class="size">
+                  <h3>One-Size</h3>
+              </div>
+
+              <div class="color">
+
+                  <h3>Color :</h3>
+                  <span class="span:nth-child(2)" data-pic="https://pngimg.com/uploads/hat/hat_PNG5719.png"></span>
+                  <span class="span:nth-child(3)"></span>
+                  <span class="span:nth-child(4)"></span>
+              </div>
+            <div class="cost">
+                    <h3>Cost: 15 pts</h3>                  
+                </div>
+            <button (click)="addToCart()">Add To cart</button>
+          </div>
+
+      </div>
+  </div>
+  <div class="container" >
+    <div class="card">
+        <div class="imgBx">
+            <img src="https://pngimg.com/uploads/backpack/backpack_PNG6311.png" alt="backpack">
+        </div>
+
+        <div class="contentBx">
+
+            <h2>Backpack</h2>
+
+            <div class="size">
+                <h3>One-Size</h3>
+            </div>
+
+            <div class="color">
+
+                <h3>Color :</h3>
+                <span data-pic=""></span>
+                <span data-pic=""></span>
+                <span data-pic=""></span>
+            </div>
+          <div class="cost">
+                    <h3>Cost: 20 pts</h3>                  
+                </div>
+            <button (click)="addToCart()">Add To cart</button>
+        </div>
+
+    </div>
+
+</div>
+<script>
+    // Change The Picture and Associated Element Color when Color Options Are Clicked.
+        $(".product-colors span").click(function() {
+            $(".product-colors span").removeClass("active");
+            $(this).addClass("active");
+            $(".active").css("border-color", $(this).attr("data-color-sec"));
+            $(".container .details button").css("background", $(this).attr("data-color-sec"));
+            $(".imgBx img").attr('src', $(this).attr("data-pic"));
+    });
+</script>
+</body>
+<div>
+    <a href="Javascript:void" (click)="prev()">Prev </a> &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="Javascript:void" (click)="next()">Next </a>
+</div>
+</html>
